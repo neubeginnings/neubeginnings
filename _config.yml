@@ -1,0 +1,13 @@
+title: Neu Beginnings
+description: We are sharing our understanding of the basics of deep learning
+show_downloads: true
+
+baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
+url: "https://neubeginnings.github.io" # change this to the base hostname & protocol for your site
+
+google_analytics: UA-108439064-1
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+cayman-blog:
+  date_format: "%b %-d, %Y"
+
+theme: # leave it empty
