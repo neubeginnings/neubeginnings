@@ -43,7 +43,7 @@ Install NumPy following the instructions [here](https://www.scipy.org/install.ht
 * Below is Python code to learn how to define and index scalars, vectors and matrices. The "shape" of an ndarray (numpy array) is its shape along each dimension, and is a very useful debugging tool. Note: These only cover the basics, and you can learn about advanced indexing [here](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html).
 
 ```python
-import numpy as np# define a scalars = 1assert np.shape(s) == ()# define a column vectorx = np.array([0, 1, 2])assert x.shape == (3, )# ndarray operations are defined element-wise by defaultx_python_list = [0, 1, 2]assert x_python_list * 2 == [0, 1, 2, 0, 1, 2]assert np.array_equal(x*2, [0, 2, 4])s = [0, 2] # set of indices whose values are to be retrievedassert np.array_equal(x[s], [0, 2])"""np.arange can be used to create a sequencenp.reshape can be used to morph an array into a given shape"""# define a 3x3 matrixA = np.arange(0, 9).reshape(3, 3)assert A.shape == (3, 3)assert A[0, 0] == 0assert np.array_equal(A[0], [0, 1, 2]) # get row 0assert np.array_equal(A[:, 0], [0, 3, 6]) # get column 0 """Slicing basics -Slicing uses the : operator whereas indexing does notSlicing follows the convention; start:end:step - slicing three-tuple (i, j, k)i.e. retrieve elements from the start index to end index jumping in steps=stepDefault values: i = 0 j = n if k&gt;0 -1 if k&lt;0 k = 1Note that :: is the same as : and means select all indices along this axis.For each dimension in the array, we can give i:j:k separated by a , Note: -ve index for start or end is interpreted as len(dimension) + index -ve index for step is interpreted as moving from larger to smaller indexA[0] is indexing row 0A[0:] is slicing from row 0A[:, 0] == A[0:3:1, 0] i.e. slice all rows and index 0th columnNote: Modifying a slice modifies the original array"""
+import numpy as np$# define a scalars = 1assert np.shape(s) == ()# define a column vectorx = np.array([0, 1, 2])assert x.shape == (3, )# ndarray operations are defined element-wise by defaultx_python_list = [0, 1, 2]assert x_python_list * 2 == [0, 1, 2, 0, 1, 2]assert np.array_equal(x*2, [0, 2, 4])s = [0, 2] # set of indices whose values are to be retrievedassert np.array_equal(x[s], [0, 2])"""np.arange can be used to create a sequencenp.reshape can be used to morph an array into a given shape"""# define a 3x3 matrixA = np.arange(0, 9).reshape(3, 3)assert A.shape == (3, 3)assert A[0, 0] == 0assert np.array_equal(A[0], [0, 1, 2]) # get row 0assert np.array_equal(A[:, 0], [0, 3, 6]) # get column 0 """Slicing basics -Slicing uses the : operator whereas indexing does notSlicing follows the convention; start:end:step - slicing three-tuple (i, j, k)i.e. retrieve elements from the start index to end index jumping in steps=stepDefault values: i = 0 j = n if k&gt;0 -1 if k&lt;0 k = 1Note that :: is the same as : and means select all indices along this axis.For each dimension in the array, we can give i:j:k separated by a , Note: -ve index for start or end is interpreted as len(dimension) + index -ve index for step is interpreted as moving from larger to smaller indexA[0] is indexing row 0A[0:] is slicing from row 0A[:, 0] == A[0:3:1, 0] i.e. slice all rows and index 0th columnNote: Modifying a slice modifies the original array"""
 ```
 
 ### **Multiplying Matrices and Vectors**
@@ -66,11 +66,11 @@ Outer Product
 
 #### Matrix-Vector Products
 
-There are two ways to look at Matrix-Vector products. The first way is when the Matrix is on the left and the vector is on the right, and the second is when the Matrix is on the right and the vector is on the left. Consider a matrix $latex \textbf{\textit{A}} \in \mathbb{R}^{m \times n} $ and a vector $latex x \in \mathbb{R}^n $
+There are two ways to look at Matrix-Vector products. The first way is when the Matrix is on the left and the vector is on the right, and the second is when the Matrix is on the right and the vector is on the left. Consider a matrix $$ \textbf{\textit{A}} \in \mathbb{R}^{m \times n} $$ and a vector $$ x \in \mathbb{R}^n $$
 
 ##### Case 1: $$ y = \boldsymbol{A}x \in \mathbb{R}^m $$
 
-* Let us write A by rows. Then we find that the ith  entry of $latex y $ is equal to the inner product of the ith row of $latex \textbf{\textit{A}}$ and $latex x$, i.e. $latex y_i = a_{i}^Tx$
+* Let us write A by rows. Then we find that the ith  entry of $$ y $$ is equal to the inner product of the ith row of $$ \textbf{\textit{A}} $$ and $$ x $$, i.e. $$ y_i = a_{i}^Tx $$
 
 ![image alt text](image_4.png)
 
@@ -136,27 +136,20 @@ The column/row rank of a matrix **_A_**<sub>m x n</sub> is the largest number of
 ![image alt text](image_12.png)
 
 ```python
-
 import numpy as np
-
 from numpy.linalg import matrix_rank
 
 I = np.eye(4)
-
 assert matrix_rank(I) == 4 # Full rank identity matrix
 
 I[-1,-1] = 0. # Create a rank deficient matrix
-
 assert matrix_rank(I) == 3
 
 O = np.ones((4,))
-
 assert matrix_rank(O) == 1 # 1 dimension - rank 1 since all vectors are the same
 
 O = np.zeros((4,))
-
 assert matrix_rank(O) == 0 # Vectors don’t go in any direction
-
 ```
 
 ### Norms
@@ -183,7 +176,6 @@ The $$ L^2 $$ norm is called the Euclidean norm. It is used so frequently that t
 
 ```python
 import numpy as np
-
 import scipy
 
 D = np.diag([1, 2, 4]) # Create a diagonal matrix
@@ -191,39 +183,24 @@ D = np.diag([1, 2, 4]) # Create a diagonal matrix
 D_I = np.linalg.inv(D) # Find inverse of D
 
 # Calculate the inverse based on diagonal property
-
 diagonal = np.diag(D)
-
 assert np.array_equal(D_I, np.diag(1.0 / diagonal))
 
 """
-
 Create a symmetric matrix.
-
 Fill A[i][j] and autofill a[j][i]
-
 """
-
 A = np.zeros((3, 3))
-
 A[0][1] = 1
-
 A[1][2] = 2
-
 A = A + A.T - np.diag(A.diagonal())
-
 assert np.all(A == A.T) # Check for symmetric
 
 # Some methods to create an orthogonal matrix
-
 R = np.random.rand(3, 3)
-
 Q = scipy.linalg.orth(R)
-
 Q = scipy.stats.ortho_group.rvs(dim=3)
-
 Q, _ = np.linalg.qr(R)
-
 ```
 
 ### Eigen decomposition
