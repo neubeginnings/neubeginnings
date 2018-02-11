@@ -32,7 +32,7 @@ Install NumPy following the instructions [here](https://www.scipy.org/install.ht
 
 * Eg. $$\boldsymbol{A} $$
 
-* An element of the matrix is referred to by using its name in italics, but *not* in bold. Eg. The upper left-most entry could be referred to using $$ \textit{A}_{1,1} $$ The transpose of a matrix can be thought of as a mirror image across the main diagonal.
+* An element of the matrix is referred to by using its name in italics, but *not* in bold. Eg. The upper left-most entry could be referred to using $$ \boldsymbol{A}_{1,1} $$ The transpose of a matrix can be thought of as a mirror image across the main diagonal.
 
 * $$f\left( \boldsymbol{A} \right )_{i, j}  $$ gives the element (i, j) of the matrix computed by applying the function *f*  to **_A_**.
 
@@ -66,11 +66,11 @@ Outer Product
 
 #### Matrix-Vector Products
 
-There are two ways to look at Matrix-Vector products. The first way is when the Matrix is on the left and the vector is on the right, and the second is when the Matrix is on the right and the vector is on the left. Consider a matrix $$ \textbf{\textit{A}} \in \mathbb{R}^{m \times n} $$ and a vector $$ x \in \mathbb{R}^n $$
+There are two ways to look at Matrix-Vector products. The first way is when the Matrix is on the left and the vector is on the right, and the second is when the Matrix is on the right and the vector is on the left. Consider a matrix $$ \boldsymbol{A} \in \mathbb{R}^{m \times n} $$ and a vector $$ x \in \mathbb{R}^n $$
 
 ##### Case 1: $$ y = \boldsymbol{A}x \in \mathbb{R}^m $$
 
-* Let us write A by rows. Then we find that the ith  entry of $$ y $$ is equal to the inner product of the ith row of $$ \textbf{\textit{A}} $$ and $$ x $$, i.e. $$ y_i = a_{i}^Tx $$
+* Let us write A by rows. Then we find that the ith  entry of $$ y $$ is equal to the inner product of the ith row of $$ \boldsymbol{A} $$ and $$ x $$, i.e. $$ y_i = a_{i}^Tx $$
 
 ![image alt text](image_4.png)
 
